@@ -162,33 +162,41 @@ return {
       --    https://github.com/pmizio/typescript-tools.nvim
       --
       -- But for many setups, the LSP (`tsserver`) will work just fine
-      ts_ls = {}, -- tsserver is deprecated
-      ruff = {},
-      pylsp = {
-        settings = {
-          pylsp = {
-            plugins = {
-              pyflakes = { enabled = false },
-              pycodestyle = { enabled = false },
-              autopep8 = { enabled = false },
-              yapf = { enabled = false },
-              mccabe = { enabled = false },
-              pylsp_mypy = { enabled = false },
-              pylsp_black = { enabled = false },
-              pylsp_isort = { enabled = false },
-            },
-          },
-        },
-      },
+      ts_ls = {
+        root_dir = require('lspconfig').util.root_pattern { 'package.json', 'tsconfig.json' },
+        single_file_support = false,
+        settings = {},
+      }, -- tsserver is deprecated
+      --ruff = {},
+      --pylsp = {
+      --settings = {
+      --pylsp = {
+      --plugins = {
+      --pyflakes = { enabled = false },
+      --pycodestyle = { enabled = false },
+      --autopep8 = { enabled = false },
+      --yapf = { enabled = false },
+      --mccabe = { enabled = false },
+      --pylsp_mypy = { enabled = false },
+      --pylsp_black = { enabled = false },
+      --pylsp_isort = { enabled = false },
+      --},
+      --},
+      --},
+      --},
       html = { filetypes = { 'html', 'twig', 'hbs' } },
       cssls = {},
-      tailwindcss = {},
+      --tailwindcss = {},
       dockerls = {},
       sqlls = {},
       terraformls = {},
       jsonls = {},
       yamlls = {},
-
+      denols = {
+        root_dir = require('lspconfig').util.root_pattern { 'deno.json', 'deno.jsonc' },
+        single_file_support = false,
+        settings = {},
+      },
       lua_ls = {
         -- cmd = {...},
         -- filetypes = { ...},
