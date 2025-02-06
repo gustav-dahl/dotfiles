@@ -31,5 +31,21 @@ require('lazy').setup {
   require 'plugins.comment',
 }
 
+-- Custom background for Neo-tree
+--Normal = { fg = colors.fg, bg = colors.bg },
+vim.api.nvim_set_hl(0, 'Normal', { bg = '#252935' })
+vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = '#20242f' })
+vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = '#20242f' })
+
+-- Default line numbers
+vim.api.nvim_set_hl(0, 'LineNr', { fg = '#afb0b3' })
+
+-- Highlight the current line number
+-- vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = '#FF4500', bg = '#1E1E1E', bold = true })
+-- vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = '#1e1e2e' })
+-- vim.api.nvim_set_hl(0, 'NeoTreeCursorLine', { bg = '#282a36' })
+-- vim.api.nvim_set_hl(0, 'NeoTreeEndOfBuffer', { bg = '#1e1e2e' })
+-- vim.api.nvim_set_hl(0, 'NeoTreeWinSeparator', { bg = '#1e1e2e', fg = '#1e1e2e' })
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
